@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" This Module contains a function `canUnlockAll` """
 
 def canUnlockAll(boxes):
     """ Determines if all the boxes can be opened. Each
