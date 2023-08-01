@@ -8,7 +8,7 @@ def canUnlockAll(boxes):
         each box may contain keys to the other boxes
     """
 
-    if type(boxes) != list:
+    if (boxes == []) or (type(boxes) != list):
         return False
 
     openedBoxes = set()
@@ -19,7 +19,7 @@ def canUnlockAll(boxes):
         key = box.pop()
         openedBoxes.add(key)
 
-        if type(boxes[key]) != list:
+        if (boxes[key] == []) or (type(boxes[key]) != list):
             return False
 
         for value in boxes[key]:
