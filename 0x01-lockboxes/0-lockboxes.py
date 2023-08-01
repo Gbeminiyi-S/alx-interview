@@ -8,8 +8,10 @@ def canUnlockAll(boxes):
         each box may contain keys to the other boxes
     """
 
-    if (boxes == []) or (type(boxes) != list):
+    if type(boxes) != list:
         return False
+    elif boxes == []:
+        return True
 
     openedBoxes = set()
     boxesLength = len(boxes)
@@ -19,7 +21,7 @@ def canUnlockAll(boxes):
         key = box.pop()
         openedBoxes.add(key)
 
-        if (boxes[key] == []) or (type(boxes[key]) != list):
+        if type(boxes[key]) != list:
             return False
 
         for value in boxes[key]:
