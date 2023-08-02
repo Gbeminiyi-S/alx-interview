@@ -3,10 +3,7 @@
 
 
 def canUnlockAll(boxes):
-    """ Determines if all the boxes can be opened. Each
-        box is numbered sequentially from 0 to n - 1 and
-        each box may contain keys to the other boxes
-    """
+    """Determines if all the boxes can be opened"""
 
     if type(boxes) != list:
         return False
