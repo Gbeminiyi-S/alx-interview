@@ -27,3 +27,4 @@ def canUnlockAll(boxes):
                 freeKeys.append(key)
 
     return len(usedKeys) == len(boxes)
+
