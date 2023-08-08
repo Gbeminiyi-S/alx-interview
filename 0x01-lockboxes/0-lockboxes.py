@@ -7,23 +7,21 @@ def canUnlockAll(boxes):
 
     if type(boxes) != list:
         return False
-    elif boxes == []:
-        return True
 
     boxesLength = len(boxes)
-    freeKeys = [0]
-    usedKeys = set()
+    boxestoOpen = [0]
+    openedBoxes = set()
 
-    while freeKeys:
-        box = freeKeys.pop()
-        usedKeys.add(box)
+    while boxestoOpen:
+        boxIndex = boxestoOpen.pop()
+        openedBoxes.add(boxIndex)
 
-        if type(boxes[box]) != list:
+        if type(boxes[boxIndex]) != list:
             return False
 
-        for key in boxes[box]:
-            if (key < boxesLength) and (key not in freeKeys) and\
-                    (key not in usedKeys):
-                freeKeys.append(key)
+        for key in boxes[boxIndex]:
+            if (key < boxesLength) and (key not in foundKeys) and\
+                    (key not in openedBox):
+                boxestoOpen.append(key)
 
-    return len(usedKeys) == len(boxes)
+    return len(openedBoxes) == len(boxes)
