@@ -20,7 +20,7 @@ def canUnlockAll(boxes):
             return False
 
         for key in boxes[boxIndex]:
-            if (key < boxesLength) and (key not in foundKeys) and\
+            if (key < boxesLength) and (key not in boxestoOpen) and\
                     (key not in openedBox):
                 boxestoOpen.append(key)
 
