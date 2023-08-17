@@ -19,17 +19,20 @@ try:
     for line in sys.stdin:
         line_tokens = line.split()
         if len(line_tokens) == 9:
-            file_size = int(line_tokens[-1])
-            status_code = int(line_tokens[-2])
-            total_file_size += file_size
-            if status_code in possible_status_codes:
-                if status_code in status_codes_map:
-                    status_codes_map[status_code] += 1
-                else:
-                    status_codes_map[status_code] = 1
-            lines_read += 1
-            if lines_read % 10 == 0:
-                print_stats()
+            try:
+                file_size = int(line_tokens[-1])
+                status_code = int(line_tokens[-2])
+                total_file_size += file_size
+                if status_code in possible_status_codes:
+                    if status_code in status_codes_map:
+                        status_codes_map[status_code] += 1
+                    else:
+                        status_codes_map[status_code] = 1
+                lines_read += 1
+                if lines_read % 10 == 0:
+                    print_stats()
+            except:
+                pass
 
 except (KeyboardInterrupt):
     print_stats()
