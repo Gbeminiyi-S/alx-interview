@@ -31,10 +31,10 @@ try:
             pass
         lines_read += 1
         if lines_read % 10 == 0:
-            print_stats)
+            print_stats()
+
+    if (lines_read == 0) or (lines_read % 10 != 0):
+        print_stats()
 
 except (KeyboardInterrupt):
-    print_stats()
-
-if (lines_read == 0) or (lines_read % 10 != 0):
     print_stats()
