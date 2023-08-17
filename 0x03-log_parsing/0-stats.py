@@ -3,7 +3,7 @@
 import sys
 
 possible_status_codes = [200, 301, 400, 401, 403, 404, 405, 500]
-lines_read = 1
+lines_read = 0
 status_codes_map = {}
 total_file_size = 0
 
@@ -19,19 +19,17 @@ try:
     for line in sys.stdin:
         line_tokens = line.split()
         if len(line_tokens) == 9:
-            try:
-                file_size = int(line_tokens[-1])
-                status_code = int(line_tokens[-2])
-                total_file_size += file_size
-                if status_code in possible_status_codes:
-                    if status_code in status_codes_map:
-                        status_codes_map[status_code] += 1
-                    else:
-                        status_codes_map[status_code] = 1
-                if lines_read and (lines_read % 10 == 0):
-                    print_stats()
-            except ValueError:
-                pass
+            file_size = int(line_tokens[-1])
+            status_code = int(line_tokens[-2])
+            total_file_size += file_size
+            if status_code in possible_status_codes:
+                if status_code in status_codes_map:
+                    status_codes_map[status_code] += 1
+                else:
+                    status_codes_map[status_code] = 1
             lines_read += 1
-except KeyboardInterrupt:
+            if lines_read % 10 == 0:
+                print_stats()
+
+except KeyboardInterrupt, EOFError:
     print_stats()
