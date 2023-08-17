@@ -31,5 +31,8 @@ try:
             if lines_read % 10 == 0:
                 print_stats()
 
-except (KeyboardInterrupt, EOFError):
+except (KeyboardInterrupt):
+    print_stats()
+
+if (lines_read == 0) or (lines_read % 10 != 0):
     print_stats()
