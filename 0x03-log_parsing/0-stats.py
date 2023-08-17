@@ -3,7 +3,7 @@
 import sys
 
 possible_status_codes = [200, 301, 400, 401, 403, 404, 405, 500]
-lines_read = 0
+lines_read = 1
 status_codes_map = {}
 total_file_size = 0
 
@@ -28,7 +28,7 @@ try:
                         status_codes_map[status_code] += 1
                     else:
                         status_codes_map[status_code] = 1
-                if lines_read % 10 == 0:
+                if lines_read and (lines_read % 10 == 0):
                     print_stats()
             except ValueError:
                 pass
