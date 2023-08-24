@@ -6,3 +6,4 @@ This repository contains repositories to various projects that I've worked on in
 - [0x00-pascal_triangle](./0x00-pascal_triangle) - Project on Pascal's Triangle
 - [0x01-lockboxes](./0x01-lockboxes) - Project on lock boxes
 - [0x02-minimum_operations](./0x02-minimum_operations) - Project on minimum operations
+- [0x03-log_parsing](./0x03-log_parsing) - Project on log parsing
