@@ -14,8 +14,8 @@ This project is the fourth of many to test readiness for technical interviews.
   - The data will be represented by a list of integers
   - Each integer represents 1 byte of data, therefore you only need to handle the 8 least significant bits of each integer
 	
-	**Execution Example**
-	```
+  **Execution Example**
+  ```
   Niyi@ubuntu:~/0x04-utf8_validation$ cat 0-main.py
   #!/usr/bin/python3
   """
