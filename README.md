@@ -8,3 +8,4 @@ This repository contains repositories to various projects that I've worked on in
 - [0x02-minimum_operations](./0x02-minimum_operations) - Project on minimum operations
 - [0x03-log_parsing](./0x03-log_parsing) - Project on log parsing
 - [0x04-utf8_validation](./0x04-utf8_validation) - Project on UTF-8 validation
+- [0x05-nqueens](./0x05-nqueens) - Project on N-Queens
