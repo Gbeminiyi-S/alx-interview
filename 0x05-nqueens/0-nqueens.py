@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This script solves the N-Queens problem"""
 
-from typing import List
 import sys
 
 if len(sys.argv) != 2:
