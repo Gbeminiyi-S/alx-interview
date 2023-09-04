@@ -14,6 +14,10 @@ except ValueError:
     print("N must be a number")
     exit(1)
 
+if N < 4:
+    print("N must be at least 4")
+    exit(1)
+
 columns = set()
 pos_diagonal = set()
 neg_diagonal = set()
