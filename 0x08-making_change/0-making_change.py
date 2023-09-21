@@ -10,7 +10,7 @@ def makeChange(coins, total):
     coin_count = 0
     remainder = 0
 
-    if total == 0:
+    if total <= 0:
         return 0
     for coin in coins:
         if total == 0:
