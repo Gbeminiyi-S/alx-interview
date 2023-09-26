@@ -8,7 +8,7 @@ def island_perimeter(grid):
     row_size = len(grid)
     perimeter = 0
 
-    if col_size > 100 or row > 100:
+    if col_size > 100 or row_size > 100:
         return perimeter
 
     for i in range(row_size):
