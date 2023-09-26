@@ -1,31 +1,41 @@
-# 0x08-making_change
+# 0x09-island_perimeter
 
-This project is the ninth of many to test readiness for technical interviews.
+This project is the tenth of many to test readiness for technical interviews.
 
 ## File Descriptions
 ### Mandatory
-1. [0-making_change.py](./0-making_change.py) - a script that given a pile of coins of different values, determines the fewest number of coins needed to meet a given amount `total`
-   - Prototype: `def makeChange(coins, total)`
-   - Return: fewest number of coins needed to meet `total`
-	- If `total` is `0` or less, return `0`
-	- If `total` cannot be met by any number of coins you have, return `-1`
-	- `coins` is a list of the values of the coins in your possession
-	- The value of a coin will always be an integer greater than `0`
-	- You can assume you have an infinite number of each denomination of coin in the list
+1. [0-island_perimeter.py](./0-island_perimeter.py) - Create a function `def island_perimeter(grid)` that returns the perimeter of the island described in `grid`:
+   - `grid` is a list of list of integers:
+	- 0 represents water
+	- 1 represents land
+	- Each cell is square, with a side length of 1
+	- Cells are connected horizontally/vertically (not diagonally).
+	- `grid` is rectangular, with its width and height not exceeding 100
+   - The grid is completely surrounded by water
+   - There is only one island (or nothing).
+   - The island doesn’t have “lakes” (water inside that isn’t connected to the water surrounding the island).
 
    **Execution Example**
    ```
-   Niyi@ubuntu$ ~/0x08-making_change$ cat 0-main.py
+   Niyi@ubuntu:~/0x09$ cat 0-main.py
    #!/usr/bin/python3
    """
-   Main file for testing
+   0-main
    """
+   island_perimeter = __import__('0-island_perimeter').island_perimeter
 
-   makeChange = __import__('0-making_change').makeChange
+   if __name__ == "__main__":
+       grid = [
+           [0, 0, 0, 0, 0, 0],
+           [0, 1, 0, 0, 0, 0],
+           [0, 1, 0, 0, 0, 0],
+           [0, 1, 1, 1, 0, 0],
+           [0, 0, 0, 0, 0, 0]
+       ]
+       print(island_perimeter(grid))
 
-   print(makeChange([1, 2, 25], 37))
-
-   print(makeChange([1256, 54, 48, 16, 102], 1453))
-
-   Niyi@ubuntu:~/0x08-making_change$
+   Niyi@ubuntu:~/0x09$ 
+   Niyi@ubuntu:~/0x09$ ./0-main.py
+   12
+   Niyi@ubuntu:~/0x09$ 
    ```
