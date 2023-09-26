@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+def island_perimeter(grid):
+    size = len(grid)
+    perimeter = 0
+
+    for i in range(size):
+        for j in range (size):
+            if (0 < i < size - 1) and (0 < j < size - 1):
+                if grid[i - 1][j]:
+                    perimeter += 1
+                if grid[i][j - 1]:
+                    perimeter += 1
+                if grid[i][j + 1]:
+                    perimeter += 1
+                if grid[i + 1][j]:
+                    perimeter += 1
+    return perimeter
